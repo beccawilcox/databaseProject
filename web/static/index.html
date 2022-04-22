@@ -1,0 +1,90 @@
+<html>
+	<head>
+		<title>festivals</title>
+		<link rel="stylesheet"href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<style type="text/css">
+			body{margin:0px;padding:0px} 
+			.col-fixed-400{max-width:500px;max-height:300px;position:relative;z-index:100}
+			h1{color:white;font:Roboto;font-size:100px;font-style:bold} 
+			nav{background-color:#00fff9!important} 
+			h2{color:#401f68!important;font:Roboto;font-style:bold;margin-top:5px} 
+			p{color:grey;font:roboto;font-size:18px} 
+			.but{color:grey;font:roboto;font-size:18px;font-weight:normal}
+		</style>
+	</head>
+	<body>
+	</br>
+		<div style="height:100%;width:100%;position:absolute;top:0px;background-image:url(/rainbow.jpg);height:450px;background-position:center center;z-index:-1;background-size:cover;filter: brightness(130%) contrast(75%)">
+		</div>
+		<h1 style="padding-top:40px;padding-left:50px">Register for a music festival!</h1>
+		<nav class="navbar"style="margin-top:100px;position:absolute;height:30px;width:100%;border-radius:0%"></nav>
+		<div style="margin-top:150px;width:100%;height:1000px;background-color:white;z-index:-3;position:absolute">
+		</div>
+		<form method="POST" action="/add">
+				
+			<div class="container"style="width:60%;padding-top:200px">
+				<div class="form-group">
+					<h2>What festivals would you like to register for?</h2>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox"  id="coachella">
+							<label class="form-check-label but" for="coach">
+								Coachella								
+							</label>
+							</div>
+							<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="" id="lostlands">
+							<label class="form-check-label but" for="lost">
+								Lostlands
+							</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="" id="lolla">
+							<label class="form-check-label but" for="lola">
+								Lollapalooza
+							</label>
+						</div>
+					
+						</br>
+					
+					</div>
+				
+			
+					<div  class="form-group" id="ticktype">
+						<h2>What type of tickets do you want?</h2>
+						<div class="form-check">
+							<input class="form-check-input" type="radio" name="type" id="vip" value="option1" checked>
+							<label class="form-check-label but" for="exampleRadios1">
+								VIP
+							</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="radio" name="type" id="regular" value="option2" checked>
+							<label class="form-check-label but" for="exampleRadios1">
+								Regular Admissions
+							</label>
+						</div>
+							
+						</br>
+						
+					</div>
+					</br>
+					<div class="form-group">
+						<h2>What is your name?</h2>
+						<textarea class="form-control" id="name" rows="1"></textarea>
+					</div>
+					</br>
+					<div  class="form-group" id="ageat">
+						<h2>What is your age?</h2>
+						<textarea class="form-control" id="age" rows="1"></textarea>
+					</div>
+					
+					</br>
+					<button type="submit" id="sub1" class="btn" style="background-color:white !important;border-color:401f68 !important; color:401f68">Submit</button>
+					
+				</div>
+				
+				
+		</form>
+	</body>
+</html>
