@@ -15,7 +15,7 @@
 	</head>
 	<body>
 	</br>
-		<div style="height:100%;width:100%;position:absolute;top:0px;background-image:url("rainbow.jpg"); height:450px;background-position:center center;z-index:-1;background-size:cover;filter: brightness(130%) contrast(75%)">
+		<div style="height:100%;width:100%;position:absolute;top:0px;background-image:url('rainbow.jpg'); height:450px;background-position:center center;z-index:-1;background-size:cover;filter: brightness(130%) contrast(75%)">
 		</div>
 		<h1 style="padding-top:40px;padding-left:50px">Register for a music festival!</h1>
 		<nav class="navbar"style="margin-top:100px;position:absolute;height:30px;width:100%;border-radius:0%"></nav>
@@ -27,19 +27,19 @@
 				<div class="form-group">
 					<h2>What festivals would you like to register for?</h2>
 						<div class="form-check">
-							<input class="form-check-input" type="checkbox"  id="coachella">
+							<input name="coach" class="form-check-input" type="checkbox"  id="coachella">
 							<label class="form-check-label but" for="coach">
 								Coachella								
 							</label>
 							</div>
 							<div class="form-check">
-							<input class="form-check-input" type="checkbox" value="" id="lostlands">
+							<input name="lost" class="form-check-input" type="checkbox" value="" id="lostlands">
 							<label class="form-check-label but" for="lost">
 								Lostlands
 							</label>
 						</div>
 						<div class="form-check">
-							<input class="form-check-input" type="checkbox" value="" id="lolla">
+							<input name="lola" class="form-check-input" type="checkbox" value="" id="lolla">
 							<label class="form-check-label but" for="lola">
 								Lollapalooza
 							</label>
@@ -50,17 +50,17 @@
 					</div>
 				
 			
-					<div  class="form-group" id="ticktype">
+					<div  class="form-group">
 						<h2>What type of tickets do you want?</h2>
 						<div class="form-check">
-							<input class="form-check-input" type="radio" name="type" id="vip" value="option1" checked>
-							<label class="form-check-label but" for="exampleRadios1">
+							<input name="vip" class="form-check-input" type="radio"  value="on" >
+							<label class="form-check-label but">
 								VIP
 							</label>
 						</div>
 						<div class="form-check">
-							<input class="form-check-input" type="radio" name="type" id="regular" value="option2" checked>
-							<label class="form-check-label but" for="exampleRadios1">
+							<input name="reg" class="form-check-input" type="radio"  id="regular" value="on" >
+							<label class="form-check-label but">
 								Regular Admissions
 							</label>
 						</div>
@@ -71,14 +71,18 @@
 					</br>
 					<div class="form-group">
 						<h2>What is your name?</h2>
-						<textarea class="form-control" id="name" rows="1"></textarea>
+						<textarea class="form-control" name="name" rows="1"></textarea>
 					</div>
 					</br>
 					<div  class="form-group" id="ageat">
 						<h2>What is your age?</h2>
-						<textarea class="form-control" id="age" rows="1"></textarea>
+						<textarea class="form-control" name="age" rows="1"></textarea>
 					</div>
-					
+                                        </br>
+                                        <div  class="form-group" id="ageat">
+                                                <h2>What year?</h2>
+                                                <textarea class="form-control" name="year" rows="1"></textarea>
+                                        </div>					
 					</br>
 					<button type="submit" id="sub1" class="btn" style="background-color:white !important;border-color:401f68 !important; color:401f68">Submit</button>
 					
