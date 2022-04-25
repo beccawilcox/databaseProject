@@ -24,8 +24,6 @@ var aa = "off";
 
 
 app.use(bodyParser.urlencoded({extended: false}));
-app.use(express.static(path.join(__dirname,'/public')));
-//app.use(express.static('public'));
 app.use(helmet());
 
 app.post('/add', function(req,res){ //this gets the values from the form in index.html
@@ -37,12 +35,7 @@ app.post('/add', function(req,res){ //this gets the values from the form in inde
   vip=req.body.vip;
   ga=req.body.reg;
   aa = req.body.aa;
-  console.log("name: " + name);
-  console.log("age: " +age);
-  console.log("coach?: "+coachella);
-  console.log("lola?: "+lolla);
-  console.log("vip: "+vip);
-  console.log("reg: "+ ga);
+  res.redirect('/add');  
 
 if (aa=="on") type="AA";
 if (vip=="on") type="VIP"; 
@@ -89,6 +82,9 @@ app.get("/", function (req, res) {
     res.sendFile(__dirname + "/index.html"); //this serves the file when localhost:3000 is put in browser after running node app2.js in commandline
 });
 
+app.get("/add", function (req, res) {
+    res.sendFile(__dirname + "/success.html"); //this serves the file when localhost:3000 is put in browser after running node app2.js in commandline
+});
 
 app.listen(3000,function(){console.log("Server listening on port: 3000");});
 
