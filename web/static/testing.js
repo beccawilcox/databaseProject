@@ -1,7 +1,7 @@
 var sqlite3 = require('sqlite3');
 var festival = "Coachella"
 
-
+var art=[];
 
 let db = new sqlite3.Database('./test.db',(err)=>{
 
@@ -17,8 +17,12 @@ var artists = db.all('SELECT P.name FROM Attends A, Performer P WHERE A.name="'+
 if (err) {
   console.log(err);
 }
+for(let i=0; i<data.length; i++){
+  art[i] = JSON.stringify(data[i]).substring(9,data[i].length).slice(0,-2);
+  console.log(art[i]);
 
-console.log(data);
+};
+//console.log(data);
 });
 
 

@@ -62,14 +62,18 @@ var artists = db.all('SELECT P.name FROM Attends A, Performer P WHERE A.name="'+
 if (err) {
   console.log(err);
 }
-console.log(data)
-art = data;
+for(let i=0; i<data.length; i++){
+  art[i] = JSON.stringify(data[i]).substring(9,data[i].length).slice(0,-2);
+  console.log(art[i]);
+
+};
+
 });
 
 db.close();
 console.log('connection to db closed');
 
-console.log(art);
+
 });
 
 
