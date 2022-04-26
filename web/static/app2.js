@@ -1,9 +1,8 @@
-var sqlite3 = require('sqlite3').verbose();
+var sqlite3 = require('sqlite3');
 var http = require('http');
 var path = require("path");
 var bodyParser = require('body-parser');
 var helmet = require('helmet');
-var rateLimit = require("express-rate-limit");
 
 const express = require("express");
 const app = express();
@@ -20,7 +19,7 @@ var festival = "";
 var wristband_id = 1;
 var year = 2019;
 var aa = "off";
-
+var art=[];
 
 
 app.use(bodyParser.urlencoded({extended: false}));
@@ -30,12 +29,12 @@ app.post('/add', function(req,res){ //this gets the values from the form in inde
   name=req.body.name;
   age=req.body.age;
   coachella=req.body.coach;
-  lolla=req.body.lolla;
+  lolla=req.body.lola;
   lostlands=req.body.lost;
   vip=req.body.vip;
   ga=req.body.reg;
   aa = req.body.aa;
-  res.redirect('/add');  
+  res.redirect('/success');  
 
 if (aa=="on") type="AA";
 if (vip=="on") type="VIP"; 
@@ -56,11 +55,22 @@ if (vip=="on") type="VIP";
 
 db.run('INSERT INTO Attendee(wristband_id, name, age, ticket_type) VALUES(0' + wristband_id+ ', \''+ name + '\', ' + age + ', \'' + type + '\')');
 db.run('INSERT INTO Attends(wristband_id, name, year) VALUES(0' + wristband_id+ ', \''+ festival + '\', ' + year + ')');
-  db.close()
-console.log('connection closed')
 
+console.log("festival is: "+festival);
+
+var artists = db.all('SELECT P.name FROM Attends A, Performer P WHERE A.name="'+festival+'" AND P.performer_id = A.wristband_id', function(err, data) {
+if (err) {
+  console.log(err);
+}
+console.log(data)
+art = data;
 });
 
+db.close();
+console.log('connection to db closed');
+
+console.log(art);
+});
 
 
 
@@ -82,7 +92,7 @@ app.get("/", function (req, res) {
     res.sendFile(__dirname + "/index.html"); //this serves the file when localhost:3000 is put in browser after running node app2.js in commandline
 });
 
-app.get("/add", function (req, res) {
+app.get("/success", function (req, res) {
     res.sendFile(__dirname + "/success.html"); //this serves the file when localhost:3000 is put in browser after running node app2.js in commandline
 });
 
