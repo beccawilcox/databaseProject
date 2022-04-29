@@ -2,7 +2,6 @@ var sqlite3 = require('sqlite3');
 var http = require('http');
 var path = require("path");
 var bodyParser = require('body-parser');
-var helmet = require('helmet');
 
 const express = require("express");
 const app = express();
@@ -27,7 +26,6 @@ var art = "";
 var artists= "";
 
 app.use(bodyParser.urlencoded({extended: false}));
-app.use(helmet());
 
 app.post('/success', function(req,res){ //this gets the values from the form in index.html
   name=req.body.name;
